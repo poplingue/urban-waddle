@@ -17,7 +17,7 @@ $ cp my-local/FXXXXXXX.txt www/.well-known/pki-validation/FXXXXXXX.txt
 ```bash
 $ mkdir certs
 $ cp my-local/certificate.crt certs/certificate.crt
-$ cp my-local/certificate.crt certs/certificate.crt
+$ cp my-local/private.key certs/private.key
 ```
 
 ### Build docker image and launch server in daemon mode
