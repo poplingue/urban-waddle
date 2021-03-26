@@ -15,6 +15,7 @@ $ cp my-local/FXXXXXXX.txt www/.well-known/pki-validation/FXXXXXXX.txt
 
 ### Add certificate to the project
 ```bash
+$ cat certificate.crt ca_bundle.crt certificate.crt > my-local/certificate.crt
 $ mkdir certs
 $ cp my-local/certificate.crt certs/certificate.crt
 $ cp my-local/private.key certs/private.key
