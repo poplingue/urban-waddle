@@ -1,0 +1,6 @@
+# secret
+certs
+www/.well-known
+
+# IDE
+.idea
