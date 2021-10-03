@@ -9,16 +9,17 @@
 ### Check server with file given by sslforfree
 
 ```bash
-$ mkdir www/.well-known/pki-validation
-$ cp my-local/FXXXXXXX.txt www/.well-known/pki-validation/FXXXXXXX.txt
+$ mkdir /home/urban-waddle/www/.well-known/pki-validation (if does not exist)
+$ cp my-local/FXXXXXXX.txt /home/urban-waddle/www/.well-known/pki-validation/FXXXXXXX.txt
 ```
 
-### Add certificate to the project
+### Merge and add certificates to the project
 ```bash
-$ cat certificate.crt ca_bundle.crt certificate.crt > my-local/certificate.crt
-$ mkdir certs
-$ cp my-local/certificate.crt certs/certificate.crt
-$ cp my-local/private.key certs/private.key
+$ cat certificate.crt ca_bundle.crt >> new-tmp-local-folder/certificate.crt
+$ mkdir /home/urban-waddle/certs (if does not exist)
+$ cp my-local/certificate.crt /home/urban-waddle/certs/certificate.crt
+$ cp my-local/private.key /home/urban-waddle/certs/private.key
+$ docker restart [container-id]
 ```
 
 ### Build docker image and launch server in daemon mode
