@@ -6,19 +6,20 @@
 ### Generate certificate :lock:
 [https://www.sslforfree.com/](https://www.sslforfree.com/)
 
-### Check server with file given by sslforfree
+### Auth File given by sslforfree on your server
 
 ```bash
 $ mkdir /home/urban-waddle/www/.well-known/pki-validation (if does not exist)
-$ cp my-local/FXXXXXXX.txt /home/urban-waddle/www/.well-known/pki-validation/FXXXXXXX.txt
+$ scp my-local/FXXXXXXX.txt /home/urban-waddle/www/.well-known/pki-validation/FXXXXXXX.txt
 ```
 
 ### Merge and add certificates to the project
 ```bash
-$ cat certificate.crt ca_bundle.crt >> new-tmp-local-folder/certificate.crt
+$ mkdir new-local-folder
+$ cat my-local/certificate.crt ca_bundle.crt >> new-local-folder/certificate.crt
 $ mkdir /home/urban-waddle/certs (if does not exist)
-$ cp my-local/certificate.crt /home/urban-waddle/certs/certificate.crt
-$ cp my-local/private.key /home/urban-waddle/certs/private.key
+$ scp new-local-folder/certificate.crt user@server_name/home/urban-waddle/certs/certificate.crt
+$ scp my-local/private.key user@server_name/home/urban-waddle/certs/private.key
 $ docker restart [container-id]
 ```
 
