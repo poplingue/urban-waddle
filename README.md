@@ -1,5 +1,5 @@
 # urban-waddle
-> basic nginx server dockerized with SSL certificate 
+> starter nginx server dockerized with SSL certificate 
 
 ## Installation
 
